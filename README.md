@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# PRODUCT CATALOG With ASP.NET, SQL Server, & REACTjs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+<br>
 
-## Available Scripts
+This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a Product Catalog. This products will be managed by API Rest, and showed in a Single-page (ReactJS - Web API).
 
-In the project directory, you can run:
+## Architecture: 3-Layer/Domain.
+<br>
 
-### `npm start`
+### *Presentation layer*: UI (ReactJS) and comunication with application layer
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### *Application layer*: Business Logic (API) with C# Lenguage and ASP.NET Core (Entity FramWork). It allows comunication between Presentation and Data layer by API Restful.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
++ [Microsoft.EntityFrameworkCore v5.0.17](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/)
+<br>
 
-### `npm test`
+### *Data layer*: Data Base manage with Microsoft SQL Server Express.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
++ Data Setting
 
-### `npm run build`
+	+ DataBase => Table setting
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+		+ id: int, not Null
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+		+ name: varchar(50), not Null
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+		+ description: varchar(50), not Null
 
-### `npm run eject`
+		+ image: VARBINARY(MAX), to store a large amount of data in a single column, Null.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+	+ Example:
+		![](./public/images/dbscreenshoot00.JPG)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+			
+	+ Test: Using [Postman](https://www.postman.com/) and swagger to test API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### *Domain*: C# lenguage (ASP.NET Core), applying Entity Framework.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Achitecture image
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* here
 
-### Code Splitting
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| 1 | 2 | 3 | 4 |
+| :---: | :---: | :---: | :---: |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
 
-### Analyzing the Bundle Size
+#### Folders structure image
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* here
 
-### Making a Progressive Web App
+### Tools
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Microsoft SQL Server v18.11.1 2019
+* Microsft Visual Studio
+* npx - nodejs
+* ReactJS Framework
+* Bootstrap
+* Git
 
-### Advanced Configuration
+### Reference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
++ [SQL Server + EF Core + ASP.NET Core Web API + CRUD + Load Related Data + Stored Procedures + Views](https://www.youtube.com/watch?v=DoYmpAPoixI)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Follow me
 
-### `npm run build` fails to minify
+#### **Follow me** 💬
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| **Author** | **GitHub** | **Twitter** | **Linkedin** |
+| :---: | :---: | :---: | :---: |
+| Crispthofer Rincon | [crispthoalex](https://github.com/crispthoalex) | [@crispthoalex](https://twitter.com/crispthoalex) | [carmurrain](https://www.linkedin.com/in/carmurrain) |
+
+
+
+##### Mayo, 2022. Colombia
