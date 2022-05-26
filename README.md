@@ -9,9 +9,15 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 <br>
 
 ### *Presentation layer*: UI (ReactJS) and comunication with application layer
+
+ + Features
+	+ useState and useEffect Hooks
+	+ Structure for components
+ 	+ Modal component
 <br>
 
-### *Application layer*: Business Logic (API) with C# Lenguage and ASP.NET Core (Entity FramWork). It allows comunication between Presentation and Data layer by API Restful.
+### *Application layer*: Business Logic (API) with C# Lenguage and ASP.NET Core (Entity FrameWork). It allows comunication between Presentation and Data layer by API Restful.
+
 
 + [Microsoft.EntityFrameworkCore v5.0.17](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/)
 <br>
@@ -34,27 +40,23 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 		![](./public/images/dbscreenshoot00.JPG)
 
 			
-	+ Test: Using [Postman](https://www.postman.com/) and swagger to test API
+	+ Test: Using [Postman](https://www.postman.com/) and swagger.
 
 
 ### *Domain*: C# lenguage (ASP.NET Core), applying Entity Framework.
+<br/>
 
+<img src="https://www.brcline.com/wp-content/uploads/2022/01/software-architecture-n-tier-application.png" width=200px>
 
-#### Achitecture image
+##### Achitecture N-tiers
 
-* here
 
 ## Project Structure
 
-| 1 | 2 | 3 | 4 |
-| :---: | :---: | :---: | :---: |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+![](./public/images/folderstructure01.JPG)
 
-#### Folders structure image
+##### Folders structure
 
-* here
 
 ### Tools
 
@@ -67,7 +69,18 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 
 ### Reference
 
++ [SQL Server technical documentation](https://docs.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver15)
+
++ [Guía de Arquitectura N-Capas
+Orientada al Dominio con .NET 4.0](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi46PbMuvz3AhVATTABHSWJAYIQFnoECCEQAQ&url=https%3A%2F%2Fresultadoslab.husi.org.co%2Fresources%2Fguia.pdf&usg=AOvVaw0Ib2h-KwgGBH0aJ1Ur95_2)
+
 + [SQL Server + EF Core + ASP.NET Core Web API + CRUD + Load Related Data + Stored Procedures + Views](https://www.youtube.com/watch?v=DoYmpAPoixI)
+
++ [React Build Custom Search / List Filter Component Tutorial](https://www.positronx.io/react-build-custom-search-list-filter-component-tutorial/)
+
++ [Image Upload in React with Asp.Net Core Web API](https://youtu.be/ORVShW0Yjaw)
+
++ [React JS & Asp.Net Core Web API - Image Upload, Retrieve, Update and Delete](https://www.youtube.com/watch?v=jSO5KJLd5Qk)
 
 
 ## Follow me
