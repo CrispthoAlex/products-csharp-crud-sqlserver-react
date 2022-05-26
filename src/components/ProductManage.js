@@ -4,13 +4,16 @@ import { ProductTableRow } from './ProductTableRow'
 
 
 
-export const ProductManage = ({data, opencloseModal, controlModal, handleChange, fetchPost}) => {
+export const ProductManage = ({data, stateModals, controlModal,
+                              handleChange, crudMethod,
+                              selectProduct, productData
+                            }) => {
 
   return (
     <div className='container '>
       <br/><br/>
       <button
-      onClick={()=> opencloseModal()}
+      onClick={()=> controlModal.Insert()}
       className="btn btn-success"
       >
         Insert new data
@@ -28,10 +31,11 @@ export const ProductManage = ({data, opencloseModal, controlModal, handleChange,
           </tr>
         </thead>
         <tbody>
-          {data.length > 0 ? (data.map((el)=> (
+          {data.length > 0 ? (data.map((product)=> (
               <ProductTableRow
-                key={el.id}
-                el={el}
+                key={product.id}
+                product={product}
+                selectProduct={selectProduct}
               />
             ))
           ) : (
@@ -44,10 +48,11 @@ export const ProductManage = ({data, opencloseModal, controlModal, handleChange,
         </tbody>
       </table>
       <Modals
-        opencloseModal={opencloseModal}
+        stateModals={stateModals}
         controlModal={controlModal}
         handleChange={handleChange}
-        fetchPost={fetchPost}
+        crudMethod={crudMethod}
+        productData={productData}
       />
     </div>
   )
