@@ -1,25 +1,25 @@
 import React from 'react'
 import Modals from './Modals'
-import { ProductTableRow } from './ProductTableRow'
+import { Search } from './Search'
+import '../styles/Table.css'
 
 
 
-export const ProductManage = ({data, stateModals, controlModal,
-                              handleChange, crudMethod,
-                              selectProduct, productData
-                            }) => {
+export const ProductManage = (
+  {data, stateModals, controlModal, handleChange, crudMethod,
+    selectProduct, productData }) => {
 
   return (
-    <div className='container '>
+    <div>
       <br/><br/>
       <button
       onClick={()=> controlModal.Insert()}
       className="btn btn-success"
       >
-        Insert new data
+        Insert New Product
       </button>
       <br/><br/>
-      <table className="table table-bordered">
+      <table>
         <thead>
           <tr>
             <th>Id</th>
@@ -31,19 +31,16 @@ export const ProductManage = ({data, stateModals, controlModal,
           </tr>
         </thead>
         <tbody>
-          {data.length > 0 ? (data.map((product)=> (
-              <ProductTableRow
-                key={product.id}
-                product={product}
-                selectProduct={selectProduct}
-              />
-            ))
+          {data.length > 0 ? (
+            <Search
+              data={data}
+              selectProduct={selectProduct}
+            />
           ) : (
             <tr>
               <td colSpan="6">Not Data</td>
             </tr>
-          )
-            
+          )  
           }
         </tbody>
       </table>

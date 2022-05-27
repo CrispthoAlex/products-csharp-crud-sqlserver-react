@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
-import ProductManage from "./components/ProductManage";
+import React, { useState, useEffect } from "react"
+import './styles/App.css'
+import axios from 'axios'
+import ProductManage from "./components/ProductManage"
 
 
 
@@ -21,7 +20,7 @@ function App() {
   const urlDB="https://localhost:5001/api/ManagerDB"
 
   // setting the data
-  const [data, SetData]= useState([]);
+  const [data, setData]= useState([]);
 
   const [productData, setProductData] = useState(initialValues)
 
@@ -34,7 +33,7 @@ function App() {
     await axios.get(urlDB).then(res=> {
       // Success Status
       console.log(res);
-      SetData(res.data);
+      setData(res.data);
     }).catch(error=>{
       console.log(error);
     });
@@ -51,7 +50,7 @@ function App() {
     await axios.post(urlDB, productData)
     .then(res=> {
       // Success Status
-      SetData(data.concat(res.data));
+      setData(data.concat(res.data));
       controlModal.Insert();
     }).catch(error=>{
       console.log(error);
@@ -72,7 +71,7 @@ function App() {
           product.category = response.category;
           product.picture = response.picture;
         }
-        //return product; // Be careful with this
+        return product; // Be careful with this
       });
       controlModal.Edit();
 
@@ -84,8 +83,9 @@ function App() {
   const fetchDelete= async ()=> {
     await axios.delete(urlDB+"/"+productData.id)
     .then(res=> {
-      SetData(data.filter(product=> product.id !== res.data))
+      setData(data.filter(product=> product.id !== res.data))
       controlModal.Delete();
+      window.location.reload();
     }).catch(error=>{
       console.log(error);
     });
@@ -134,7 +134,14 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App container">
+      <div className="App-header .bg-primary.bg-gradient">
+        <h1>Product Catalog</h1>
+        <h4>ASP.Net Core + ReactJs</h4>
+        <div>
+          <img src="./images/aspnetcore_logo.png" width="200px" alt="Asp .Net Core logo"/><img src="./images/react_logo.svg" width="200px" alt="ReactJs logo"/>
+        </div>
+      </div>
       <ProductManage
         data={data}
         stateModals={stateModals}
@@ -144,6 +151,7 @@ function App() {
         selectProduct={selectProduct}
         productData={productData}
       />
+      <hr />
     </div>
   );
 }
