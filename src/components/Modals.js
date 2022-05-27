@@ -28,7 +28,7 @@ const Modals = ({stateModals, controlModal,
             <input type="text" className="form-control"
               name="category" onChange={handleChange}/><br/>
             <label>Picture: </label><br/>
-            <input type="file" className="form-control"
+            <input type="file" accept='image/*' className="form-control-file"
               name="picture" alt="Product image" onChange={handleChange}/><br/>
           </div>
         </ModalBody>

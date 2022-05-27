@@ -130,7 +130,6 @@ function App() {
     setProductData({
       ...productData, [name]:value
     })
-    console.log(productData);
   }
 
   return (
