@@ -12,8 +12,19 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 
  + Features
 	+ useState and useEffect Hooks
-	+ Structure for components
+	+ Components
  	+ Modal component
+	+ Filter and search
+<br>
+
+#### Screenshot
+
+##### Web Api
+![](./public/images/webapiscreenshoot00.JPG)
+
+##### Web Api feature search
+![](./public/images/webapiscreenshoot01.JPG)
+
 <br>
 
 ### *Application layer*: Business Logic (API) with C# Lenguage and ASP.NET Core (Entity FrameWork). It allows comunication between Presentation and Data layer by API Restful.
@@ -48,7 +59,11 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 
 <img src="https://www.brcline.com/wp-content/uploads/2022/01/software-architecture-n-tier-application.png" width=200px>
 
-##### Achitecture N-tiers
+##### a. Achitecture N-tiers
+
+<img src="./public/images/n-tiers_architecture02.JPG" width=250px>
+
+##### b. Achitecture N-tiers
 
 
 ## Project Structure
