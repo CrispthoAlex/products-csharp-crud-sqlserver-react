@@ -1,0 +1,33 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table td, table th {
+    border: 2px solid rgb(199, 199, 199);
+  }
+  
+  table tr:nth-child(even){
+    background-color: #fafafa;
+  }
+  
+  table tr:hover {
+    background-color: rgb(219, 241, 255);
+    border-color: black;
+    color:blue;
+  }
+  
+  table thead {
+    background-color: #282c34;
+    color: rgb(255, 238, 86);
+    height: 40px;
+  }
+
+  table thead tr:hover {
+    background-color: rgb(255, 238, 86);
+    color:#282c34;
+  }
+
+  .filterRow {
+    padding: 10px 0;
+  }
