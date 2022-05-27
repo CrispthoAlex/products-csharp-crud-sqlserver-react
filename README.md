@@ -82,6 +82,19 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 * Bootstrap
 * Git
 
+
+## Try it!
+
+First, you should download the [DB compressed file](managerdb_sqlserver.zip)
+
+Second, clone this repo
+
+Third, remember install:
+
++ MS Sql server ([connection config](https://youtu.be/ORVShW0Yjaw?t=161))
+
++ Visual Studio 2019 [Packages: entity framework core (efc), (efc).sqlserver, (efc).tools](https://www.nuget.org) from interface itself
+
 ### Reference
 
 + [SQL Server technical documentation](https://docs.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver15)
@@ -91,11 +104,14 @@ Orientada al Dominio con .NET 4.0](https://www.google.com/url?sa=t&rct=j&q=&esrc
 
 + [SQL Server + EF Core + ASP.NET Core Web API + CRUD + Load Related Data + Stored Procedures + Views](https://www.youtube.com/watch?v=DoYmpAPoixI)
 
-+ [React Build Custom Search / List Filter Component Tutorial](https://www.positronx.io/react-build-custom-search-list-filter-component-tutorial/)
-
 + [Image Upload in React with Asp.Net Core Web API](https://youtu.be/ORVShW0Yjaw)
 
 + [React JS & Asp.Net Core Web API - Image Upload, Retrieve, Update and Delete](https://www.youtube.com/watch?v=jSO5KJLd5Qk)
+
++ [React Build Custom Search / List Filter Component Tutorial](https://www.positronx.io/react-build-custom-search-list-filter-component-tutorial/)
+
++ [Search and Filter Data using hooks](https://catalins.tech/search-and-filter-data-in-react-using-hooks)
+
 
 
 ## Follow me
