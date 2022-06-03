@@ -5,15 +5,6 @@ import ProductManage from "./components/ProductManage"
 
 
 
-const initialValues = {
-  id:0,
-  name:"",
-  description:"",
-  category:"",
-  picture:""
-}
-
-
 function App() {
 
   // Save the data once time
@@ -22,7 +13,7 @@ function App() {
   // setting the data
   const [data, setData]= useState([]);
 
-  const [productData, setProductData] = useState(initialValues)
+  const [productData, setProductData] = useState({})
 
   //===========================================================
   /**
@@ -59,6 +50,7 @@ function App() {
       setData(data.concat(res.data));
       controlModal.Insert();
     }).catch(error=>{
+      alert('\t\tComplete the Information\n\n' + error);
     });
   }
   // PUT method
