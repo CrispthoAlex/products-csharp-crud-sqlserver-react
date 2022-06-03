@@ -10,7 +10,7 @@ const initialValues = {
   name:"",
   description:"",
   category:"",
-  picture:null
+  picture:""
 }
 
 
@@ -43,22 +43,27 @@ function App() {
     fetchGet();
   }, [])
 
+  // Setting the enctype with Axios
+  const configHeaders = {headers: {
+    "Content-Type": "application/json",
+  }}
+
   // POST method
   const fetchPost= async ()=> {
     // Avoid to modify the id. It's primary key, auto increment
     delete productData.id;
-    await axios.post(urlDB, productData)
+
+    await axios.post(urlDB, productData, configHeaders)
     .then(res=> {
       // Success Status
       setData(data.concat(res.data));
       controlModal.Insert();
     }).catch(error=>{
-      console.log(error);
     });
   }
   // PUT method
   const fetchPut= async ()=> {
-    await axios.put(urlDB+"/"+productData.id, productData)
+    await axios.put(urlDB+"/"+productData.id, productData, configHeaders)
     .then(res=> {
       // Success
       var response = res.data;
@@ -125,11 +130,36 @@ function App() {
   /**
    * Onchange method
    */
-  const handleChange= (e)=> {
-    const {name, value}=e.target;
+  const handleChange= async (e)=> {
+    e.preventDefault();
+
+    const {name, value}= e.target;
+
+    let fileObj = null;
+    let imageBase64 = null;
+    if (e.target.files) {
+      fileObj = e.target.files;
+      console.log(fileObj[0]);
+      imageBase64 = await converToBase64(fileObj[0]);
+    }
+    console.log("convert64", imageBase64);
     setProductData({
-      ...productData, [name]:value
-    })
+      ...productData,
+      [name]:value,
+      picture: imageBase64
+    });
+  }
+
+  /**
+   * Convert Image to Base 64 (Binary format)
+  */
+  const converToBase64 = (imageFile) => {
+    return new Promise((resolve, reject)=> {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(imageFile);
+      fileReader.onload = () => resolve(fileReader.result);
+      fileReader.onerror = (error) => reject(error);
+    });
   }
 
   return (
