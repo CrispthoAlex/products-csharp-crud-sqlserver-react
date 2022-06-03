@@ -10,11 +10,14 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 
 ### *Presentation layer*: UI (ReactJS) and comunication with application layer
 
+You can deploy the [Web Api from github pages](https://crispthoalex.github.io/products-csharp-crud-sqlserver-react/), too. The CORS was enable for localhost and the repo page
+
  + Features
 	+ useState and useEffect Hooks
 	+ Components
  	+ Modal component
 	+ Filter and search
+	+ [formik](https://www.formik.org) (form package) and [Yup](https://www.npmjs.com/package/yup) (inputs validation package)
 <br>
 
 #### Screenshot
@@ -22,26 +25,29 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 ##### Web Api
 ![](./public/images/webapiscreenshoot00.JPG)
 
-##### Web Api feature search
+###### _Search feature_
 ![](./public/images/webapiscreenshoot01.JPG)
 
-##### Web Api insert product
+###### _Insert product feature_
 ![](./public/images/webapiscreenshoot02.JPG)
 
-##### Web Api edit product
+###### _Edit product feature_
 ![](./public/images/webapiscreenshoot03.JPG)
 
+###### _Delete product feature_
+![](./public/images/webapiscreenshoot04.JPG)
 ###### Note: Sending image binary to SQL server with CRUD method is pending
 
 <br>
 
 ### *Application layer*: Business Logic (API) with C# Lenguage and ASP.NET Core (Entity FrameWork). It allows comunication between Presentation and Data layer by API Restful.
 
++ Application layer is connected from https://localhost:5001 or http://localhost:5000 . Run the *_api_DBManagement_* application from Microsoft Visual Studio 2019 (or +)
 
 + [Microsoft.EntityFrameworkCore v5.0.17](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/)
 <br>
 
-### *Data layer*: Data Base manage with Microsoft SQL Server Express.
+### *Data layer*: Data Base managed with Microsoft SQL Server Express.
 
 + Data Setting
 
@@ -53,9 +59,10 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 
 		+ description: varchar(50), not Null
 
-		+ image: VARBINARY(MAX), to store a large amount of data in a single column, Null.
+		+ picture: VARBINARY(MAX), to store a large amount of data in a single column, Null.
 
 	+ Example:
+
 		![](./public/images/dbscreenshoot00.JPG)
 
 			
@@ -66,11 +73,11 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 
 <br/>
 
-<img src="https://www.brcline.com/wp-content/uploads/2022/01/software-architecture-n-tier-application.png" width=250px>
+<img src="https://www.brcline.com/wp-content/uploads/2022/01/software-architecture-n-tier-application.png" width=350px>
 
 ##### a. Achitecture N-tiers
 
-<img src="./public/images/n-tiers_architecture02.JPG" width=350px>
+<img src="./public/images/n-tiers_architecture02.JPG" width=450px>
 
 ##### b. Achitecture N-tiers
 
@@ -87,8 +94,6 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 
 <br/>
 
-##### Folders structure
-
 
 ### Tools
 
@@ -102,11 +107,14 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 
 ## Try it!
 
-* First, you should download the [Api_DB_Imagetest_CompressedFiles](./Api_DB_image_compressed.zip)
+* First, you should download the [Api_DB_Imagetest_CompressedFiles](./Api_DB_image_compressed.zip). You can store this descompressed files outside from this folder
 
-	+ [How to Import and Export SQL Server Database](https://www.geeksforgeeks.org/how-to-import-and-export-sql-server-database/)
+	+ Tips: [How to Import and Export SQL Server Database](https://www.geeksforgeeks.org/how-to-import-and-export-sql-server-database/)
 
 * Second, clone this repo
+	+ In *products-csharp-crud-sqlserver-react* repo, you can run the react app from [localhost](http://localhost:3000/):
+
+		| ```` $> npm start ```` |
 
 * Third, remember install MS SQL Server and Visual Studio 2019:
 
@@ -114,12 +122,13 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 
 	+ Visual Studio 2019 [Packages: entity framework core (efc), (efc).sqlserver, (efc).tools](https://www.nuget.org) from interface itself
 
+
 ## Reference
 
 + [SQL Server technical documentation](https://docs.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver15)
 
 + [Guía de Arquitectura N-Capas
-Orientada al Dominio con .NET 4.0](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi46PbMuvz3AhVATTABHSWJAYIQFnoECCEQAQ&url=https%3A%2F%2Fresultadoslab.husi.org.co%2Fresources%2Fguia.pdf&usg=AOvVaw0Ib2h-KwgGBH0aJ1Ur95_2)
+Orientada al Dominio con .NET 4.0](https://resultadoslab.husi.org.co/resources/guia.pdf)
 
 + [SQL Server + EF Core + ASP.NET Core Web API + CRUD + Load Related Data + Stored Procedures + Views](https://www.youtube.com/watch?v=DoYmpAPoixI)
 
@@ -131,11 +140,9 @@ Orientada al Dominio con .NET 4.0](https://www.google.com/url?sa=t&rct=j&q=&esrc
 
 + [Search and Filter Data using hooks](https://catalins.tech/search-and-filter-data-in-react-using-hooks)
 
+<br/>
 
-
-## Follow me
-
-#### **Follow me** 💬
+## **Follow me** 💬
 
 | **Author** | **GitHub** | **Twitter** | **Linkedin** |
 | :---: | :---: | :---: | :---: |
