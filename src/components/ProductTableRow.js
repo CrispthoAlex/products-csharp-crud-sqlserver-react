@@ -14,10 +14,22 @@ export const ProductTableRow = ({product, selectProduct}) => {
       <td>{name}</td>
       <td>{description}</td>
       <td>{category}</td>
-      <td>{picture}</td>
+      <td>{picture ?
+        <img type="image/*;base64" src={picture} alt="Product"/>
+        :
+        "Not image selected"}
+      </td>
       <td>
-        <button className="btn btn-primary" onClick={ () => { selectProduct(product, "Edit") }}>Edit</button>
-        <button className="btn btn-danger" onClick={ () => { selectProduct(product, "Delete") }}>Delete</button>
+        <button
+          className="btn btn-primary"
+          onClick={ () => { selectProduct(product, "Edit") }}
+        >Edit
+        </button>
+        <button
+          className="btn btn-danger"
+          onClick={ () => { selectProduct(product, "Delete") }}
+        >Delete
+        </button>
       </td>
     </tr>
   )
