@@ -25,6 +25,14 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 ##### Web Api feature search
 ![](./public/images/webapiscreenshoot01.JPG)
 
+##### Web Api insert product
+![](./public/images/webapiscreenshoot02.JPG)
+
+##### Web Api edit product
+![](./public/images/webapiscreenshoot03.JPG)
+
+###### Note: Sending image binary to SQL server with CRUD method is pending
+
 <br>
 
 ### *Application layer*: Business Logic (API) with C# Lenguage and ASP.NET Core (Entity FrameWork). It allows comunication between Presentation and Data layer by API Restful.
@@ -55,20 +63,29 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 
 
 ### *Domain*: C# lenguage (ASP.NET Core), applying Entity Framework.
+
 <br/>
 
-<img src="https://www.brcline.com/wp-content/uploads/2022/01/software-architecture-n-tier-application.png" width=200px>
+<img src="https://www.brcline.com/wp-content/uploads/2022/01/software-architecture-n-tier-application.png" width=250px>
 
 ##### a. Achitecture N-tiers
 
-<img src="./public/images/n-tiers_architecture02.JPG" width=250px>
+<img src="./public/images/n-tiers_architecture02.JPG" width=350px>
 
 ##### b. Achitecture N-tiers
 
 
 ## Project Structure
-
+### FrontEnd
 ![](./public/images/folderstructure01.JPG)
+
+### API
+![](./public/images/folderstructure02.JPG)
+
+### DataBase
+![](./public/images/dbstructure03.JPG)
+
+<br/>
 
 ##### Folders structure
 
@@ -85,17 +102,19 @@ This project is a Full-Stack CRUD (Create-Read-Update-Delete) application of a P
 
 ## Try it!
 
-First, you should download the [DB compressed file](managerdb_sqlserver.zip)
+* First, you should download the [Api_DB_Imagetest_CompressedFiles](./Api_DB_image_compressed.zip)
 
-Second, clone this repo
+	+ [How to Import and Export SQL Server Database](https://www.geeksforgeeks.org/how-to-import-and-export-sql-server-database/)
 
-Third, remember install:
+* Second, clone this repo
 
-+ MS Sql server ([connection config](https://youtu.be/ORVShW0Yjaw?t=161))
+* Third, remember install MS SQL Server and Visual Studio 2019:
 
-+ Visual Studio 2019 [Packages: entity framework core (efc), (efc).sqlserver, (efc).tools](https://www.nuget.org) from interface itself
+	+ [MS Sql server](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16) ([check connection config](https://youtu.be/ORVShW0Yjaw?t=161))
 
-### Reference
+	+ Visual Studio 2019 [Packages: entity framework core (efc), (efc).sqlserver, (efc).tools](https://www.nuget.org) from interface itself
+
+## Reference
 
 + [SQL Server technical documentation](https://docs.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver15)
 
