@@ -1,5 +1,7 @@
 import React from 'react';
 import {Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
 
 
 
@@ -8,35 +10,77 @@ const Modals = ({stateModals, controlModal,
                 productData
               }) => {
 
+  const formik = useFormik({
+    initialValues: {
+      id:0,
+      name:"",
+      description:"",
+      category:"",
+      picture:""
+    },
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .min(6, 'Must be 6 characters or more')
+        .required('Required'),
+      description: Yup.string()
+        .min(6, 'Must be 6 characters or more')
+        .max(50, 'Must be 50 characters or less')
+        .required('Required'),
+      category: Yup.string()
+        .required('Required'),
+    }),
+  });
 
   return (
     <div>
       <Modal isOpen={stateModals.insert}>
-        <ModalHeader>
-          Insert Product
-          <p>DataBase Manager</p>
-        </ModalHeader>
+        <ModalHeader>Insert Product</ModalHeader>
         <ModalBody>
-          <div className="form-group">
-            <label>Name: </label><br/>
+          <form className="form-group">
+            <label htmlFor='name'>Name: </label><br/>
             <input type="text" className="form-control"
-              name="name" onChange={handleChange}/><br/>
-            <label>Description: </label><br/>
+              name="name" onChange={handleChange}
+              placeholder='Product Name'
+            />
+            {formik.touched.name && formik.errors.name ? (
+                <div>{formik.errors.name}</div>
+            ) : null}
+              <br/>
+            <label htmlFor='description'>Description: </label><br/>
             <input type="text" className="form-control"
-              name="description" onChange={handleChange}/><br/>
-            <label>Category: </label><br/>
+              name="description" onChange={handleChange}
+              placeholder='Product description'
+            />
+            {formik.touched.description && formik.errors.description ? (
+                <div>{formik.errors.description}</div>
+            ) : null}
+            <br/>
+            <label htmlFor='category'>Category: </label><br/>
             <input type="text" className="form-control"
-              name="category" onChange={handleChange}/><br/>
+              name="category" onChange={handleChange}
+              placeholder='Product category'
+            />
+            {formik.touched.category && formik.errors.category ? (
+                <div>{formik.errors.category}</div>
+            ) : null}
+            <br/>
             <label>Picture: </label><br/>
             <input type="file" accept='image/*' className="form-control-file"
-              name="picture" alt="Product image" onChange={handleChange}/><br/>
-          </div>
+              name="picture" alt="Product image" onChange={handleChange}
+            /><br/>
+            { !productData.picture ? <span>Not Image selected</span> :
+              <img
+                src={productData.picture} className='img-thumbnail rounded mx-auto d-block'
+                width="50%" alt="Product uploaded"
+              />
+            }
+          </form>
         </ModalBody>
         <ModalFooter>
           <button className="btn btn-primary"
             onClick={ ()=> {crudMethod.post()} }
           >Insert
-          </button> {" "}
+          </button>
           <button className="btn btn-danger"
             onClick={ ()=>{controlModal.Insert()} }
           >Cancel
@@ -45,37 +89,57 @@ const Modals = ({stateModals, controlModal,
       </Modal>
 
       <Modal isOpen={stateModals.edit}>
-        <ModalHeader>
-          Edit Product
-          <p>DataBase Manager</p>
-        </ModalHeader>
+        <ModalHeader>Edit Product</ModalHeader>
         <ModalBody>
-          <div className="form-group">
+          <form className="form-group">
             <label>Id: </label><br/>
             <input type="number" className="form-control"
-              readOnly value={productData && productData.id}/><br/>
-            <label>Name: </label><br/>
+              readOnly value={productData && productData.id}
+            /><br/>
+            <label htmlFor='name'>Name: </label><br/>
             <input type="text" className="form-control" name="name"
-              onChange={handleChange} value={productData && productData.name}/><br/>
-            <label>Description: </label><br/>
+              onChange={handleChange}
+              value={productData && productData.name}
+            />
+            {formik.touched.name && formik.errors.name ? (
+                <div>{formik.errors.name}</div>
+            ) : null}
+            <br/>
+            <label htmlFor='description'>Description: </label><br/>
             <input type="text" className="form-control" name="description"
               onChange={handleChange}
-              value={productData && productData.description}/><br/>
-            <label>Category: </label><br/>
+              value={productData && productData.description}
+            />
+            {formik.touched.description && formik.errors.description ? (
+                <div>{formik.errors.description}</div>
+            ) : null}
+            <br/>
+            <label htmlFor='category'>Category: </label><br/>
             <input type="text" className="form-control" name="category"
               onChange={handleChange}
-              value={productData && productData.category}/><br/>
+              value={productData && productData.category}
+            />
+            {formik.touched.category && formik.errors.category ? (
+                <div>{formik.errors.category}</div>
+            ) : null}
+            <br/>
             <label>Picture: </label><br/>
-            <input type="file" className="form-control"
+            <input type="file" accept='image/*' className="form-control-file"
               name="picture" alt="Product image" onChange={handleChange}
-              value={productData && productData.picture}/><br/>
-          </div>
+            /><br/>
+            { !productData.picture ? <span>Not Image selected</span> :
+              <img
+                src={productData.picture} className='img-thumbnail rounded mx-auto d-block'
+                width="50%" alt="Product uploaded"
+              />
+            }
+          </form>
         </ModalBody>
         <ModalFooter>
           <button className="btn btn-primary"
             onClick={ ()=> {crudMethod.put()} }
           >Edit
-          </button> {" "}
+          </button>
           <button className="btn btn-danger"
             onClick={ ()=>{ controlModal.Edit()} }
           >Cancel
@@ -84,8 +148,9 @@ const Modals = ({stateModals, controlModal,
       </Modal>
 
       <Modal isOpen={stateModals.delete}>
+        <ModalHeader>Delete Product</ModalHeader>
         <ModalBody>
-          Do you want to delete {productData && productData.name} product?
+          Do you want to delete &gt;&gt; {productData && productData.name} product?
         </ModalBody>
         <ModalFooter>
           <button className='btn btn-danger'
