@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.1887f7e1.css",
-    "main.js": "/static/js/main.f6d027e2.js",
-    "index.html": "/index.html",
-    "main.1887f7e1.css.map": "/static/css/main.1887f7e1.css.map",
-    "main.f6d027e2.js.map": "/static/js/main.f6d027e2.js.map"
+    "main.css": "/products-csharp-crud-sqlserver-react/static/css/main.1887f7e1.css",
+    "main.js": "/products-csharp-crud-sqlserver-react/static/js/main.14579fa2.js",
+    "index.html": "/products-csharp-crud-sqlserver-react/index.html",
+    "main.1887f7e1.css.map": "/products-csharp-crud-sqlserver-react/static/css/main.1887f7e1.css.map",
+    "main.14579fa2.js.map": "/products-csharp-crud-sqlserver-react/static/js/main.14579fa2.js.map"
   },
   "entrypoints": [
     "static/css/main.1887f7e1.css",
-    "static/js/main.f6d027e2.js"
+    "static/js/main.14579fa2.js"
   ]
 }
